@@ -1,0 +1,10 @@
+{
+  "name": "earp",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "handlebars": "~1.0.10",
+    "underscore": "~1.4.4",
+    "async": "~0.2.6"
+  }
+}
