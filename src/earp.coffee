@@ -51,6 +51,7 @@ class Earp extends EventEmitter
 		return (req, res, next) =>
 			res.render = (name, data, options) =>
 				unless _.isObject(data) then data = {};
+				_.extend data, { $req: req }
 
 				@template name, options, (err, template) ->
 					if err then next(err)
@@ -109,7 +110,7 @@ class Earp extends EventEmitter
 			
 			if options.cache
 				cached = _.findWhere @cache, { file: template.file }
-				if cached and template.stat.mtime <= cached.stat.mtime then return cb null, cached
+				if cached and template.stat.atime <= cached.stat.atime then return cb null, cached
 
 			@retrieve template.file, (err, extras) =>
 				if err then return cb err

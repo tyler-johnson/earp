@@ -6,5 +6,7 @@ module.exports = function() {
 		wyatt = (Earp.apply( wyatt, arguments ) || wyatt);
 		if (!main) main = wyatt;
 		return wyatt;
-	} else return wyatt;
+	} else return main;
 }
+
+module.exports.Earp = Earp;
