@@ -37,7 +37,8 @@ class Earp extends EventEmitter
 		unless fs.existsSync(@location) then throw new Error("#{@location} couldn\'t be found.")
 
 	set: (key, val) ->
-		@locals[key] = val
+		if _.isObject(key) then _.extend @locals, key
+		else @locals[key] = val
 
 	registerHelper: (name, fnc) ->
 		@helpers[name] = fnc
