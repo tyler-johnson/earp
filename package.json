@@ -1,6 +1,6 @@
 {
 	"name": "earp",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Tyler Johnson <tyler@vintyge.com>",
 	"description": "Simple Handlebars Theme Management for Node.js",
 	"homepage": "https://github.com/appleifreak/earp",
