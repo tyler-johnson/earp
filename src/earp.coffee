@@ -56,7 +56,7 @@ class Earp extends EventEmitter
 				@template name, options, (err, template) ->
 					if err then next(err)
 					else
-						try html = template.compile data
+						try html = template.compile data, options
 						catch e then return next(e)
 
 						res.send(html)
